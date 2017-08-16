@@ -12,7 +12,7 @@ Checkout with Android Studio. It was built with a Mac.
 
 ## Purpose
 
-You can replace the url on the app, the ad ids and deployed your own site.
+You can replace the url on the app, the ad ids and deployed your own app.
 
 ## Contributors
 
