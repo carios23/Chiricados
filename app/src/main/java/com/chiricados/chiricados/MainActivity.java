@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -24,6 +26,7 @@ public class MainActivity extends Activity implements AdvancedWebView.Listener {
 
         mWebView = (AdvancedWebView) findViewById(R.id.webview);
         mWebView.setListener(this, this);
+        mWebView.setDesktopMode(false);
 
         WebSettings webSettings = mWebView.getSettings();
 
@@ -31,8 +34,14 @@ public class MainActivity extends Activity implements AdvancedWebView.Listener {
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setUseWideViewPort(true);
 
+  /*      mWebView.addPermittedHostname("chiricados.com");
+        mWebView.addPermittedHostname("whatsapp.com");
+        mWebView.addPermittedHostname("twitter.com");
+        mWebView.addPermittedHostname("facebook.com");
+        mWebView.addPermittedHostname("christianrios.com");
+        mWebView.addPermittedHostname("tel:");*/
         // Stop local links and redirects from opening in browser instead of WebView
-        mWebView.setWebViewClient(new WebViewClient() );
+        mWebView.setWebViewClient(new MyWebViewClient() );
         mWebView.loadUrl("https://chiricados.com/");
 
         // Load Ads
@@ -94,7 +103,13 @@ public class MainActivity extends Activity implements AdvancedWebView.Listener {
     public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) { }
 
     @Override
-    public void onExternalPageRequest(String url) { }
+    public void onExternalPageRequest(String url) {
+
+        Toast.makeText(MainActivity.this, "No se puede navegar a este sitio.",
+                Toast.LENGTH_LONG).show();
+    }
+
+
 
 
 }
