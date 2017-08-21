@@ -34,12 +34,6 @@ public class MainActivity extends Activity implements AdvancedWebView.Listener {
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setUseWideViewPort(true);
 
-  /*      mWebView.addPermittedHostname("chiricados.com");
-        mWebView.addPermittedHostname("whatsapp.com");
-        mWebView.addPermittedHostname("twitter.com");
-        mWebView.addPermittedHostname("facebook.com");
-        mWebView.addPermittedHostname("christianrios.com");
-        mWebView.addPermittedHostname("tel:");*/
         // Stop local links and redirects from opening in browser instead of WebView
         mWebView.setWebViewClient(new MyWebViewClient() );
         mWebView.loadUrl("https://chiricados.com/");
