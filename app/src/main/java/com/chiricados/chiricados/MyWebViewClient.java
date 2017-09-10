@@ -19,7 +19,7 @@ public class MyWebViewClient extends WebViewClient {
             Intent tel = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
             view.getContext().startActivity(tel);
             return true;
-        } else if (Uri.parse(url).getHost().endsWith("chiricados.com")) {
+        } else if (Uri.parse(url).getHost().endsWith("chiricados.com") || Uri.parse(url).getHost().contains("facebook")) {
             return false;
         }
 
